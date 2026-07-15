@@ -6,10 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-
     <p id="counterDisplay">0</p>
-    <p id="messageDisplay"></p>
     <button id="cookieButton">Cookie</button>
+    <p id="messageDisplay"></p>
 
     <script>
         const counterDisplay = document.getElementById("counterDisplay");
@@ -18,6 +17,22 @@
 
         let click = 0;
 
+        cookieButton.addEventListener("click", () => {
+            click ++;
+            counterDisplay.innerHTML = click;
+            if (click === 10){
+                messageDisplay.innerHTML = "You're just getting started!";
+            }
+            else if (click === 25){
+                messageDisplay.innerHTML = "Wow, that's a lot of cookies!";
+            }
+            else if (click === 50){
+                messageDisplay.innerHTML = "Are you still clicking?";
+            }
+            else if (click === 100){
+                messageDisplay.innerHTML = "You win! Maybe take a break...";
+            }
+        });
     </script>
 
 </body>
