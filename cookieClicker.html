@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body style="font-family: sans-serif;">
+    <h1>🍬🍭Candy Clicker 🍭🍬</h1>
     <p id="counterDisplay">0</p>
-    <button id="cookieButton">Cookie</button>
+    <button id="cookieButton">Candy!</button>
     <p id="messageDisplay"></p>
 
     <script>
@@ -15,24 +16,38 @@
         const messageDisplay = document.getElementById("messageDisplay");
         const cookieButton = document.getElementById("cookieButton");
 
+        messageDisplay.innerHTML = "Click to get started!"
+
         let click = 0;
+        const colors = ["red", "orange", "yellow", "green", "blue", "purple"];
 
         cookieButton.addEventListener("click", () => {
             click ++;
             counterDisplay.innerHTML = click;
-            if (click === 10){
-                messageDisplay.innerHTML = "You're just getting started!";
+            if (click === 1){
+                messageDisplay.innerHTML = "Mmm candy!";
+            }
+            else if (click === 5){
+                messageDisplay.innerHTML = "Wow! The flavors change!";
             }
             else if (click === 25){
-                messageDisplay.innerHTML = "Wow, that's a lot of cookies!";
+                messageDisplay.innerHTML = "That's a lot of candy!";
             }
             else if (click === 50){
-                messageDisplay.innerHTML = "Are you still clicking?";
+                messageDisplay.innerHTML = "Are you still clicking? You're eating a lot of candy...";
+            }
+            else if (click === 75){
+                messageDisplay.innerHTML = "You can stop now.";
             }
             else if (click === 100){
-                messageDisplay.innerHTML = "You win! Maybe take a break...";
+                messageDisplay.innerHTML = "You win! Are you feeling sick...?";
+            }
+
+            if (click%5 === 0){
+                document.body.style.backgroundColor = colors[(click/5-1)%6];
             }
         });
+            
     </script>
 
 </body>
