@@ -19,7 +19,7 @@
         messageDisplay.innerHTML = "Click to get started!"
 
         let click = 0;
-        const colors = ["red", "orange", "yellow", "green", "blue", "purple"];
+        const colors = ["red", "orange", "yellow", "green", "blue", "purple", "pink"];
 
         cookieButton.addEventListener("click", () => {
             click ++;
@@ -40,11 +40,14 @@
                 messageDisplay.innerHTML = "You can stop now.";
             }
             else if (click === 100){
-                messageDisplay.innerHTML = "You win! Are you feeling sick...?";
+                messageDisplay.innerHTML = "Okay, okay! You win! Are you feeling sick...?";
+            }
+            else if(click === 150){
+                messageDisplay.innerHTML = "Please stop. This isn't healthy.";
             }
 
             if (click%5 === 0){
-                document.body.style.backgroundColor = colors[(click/5-1)%6];
+                document.body.style.backgroundColor = colors[(click/5-1)%colors.length];
             }
         });
             
